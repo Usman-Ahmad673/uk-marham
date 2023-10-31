@@ -84,7 +84,7 @@ const LabDetails = () => {
                             </div>
                         </div>
                         <div className="lab-details-right-side">
-                            <button className='lab-details-button'>Book Appointment</button>
+                            {/* <button className='lab-details-button'>Book Appointment via call</button> */}
                         </div>
                     </div>
                     <div className="custom-container">
