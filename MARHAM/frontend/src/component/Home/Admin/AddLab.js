@@ -17,7 +17,7 @@ const AddLab = () => {
     const [imagesPreview, setImagesPreview] = useState([]);
     const [labData, setLabData] = useState({
         name: '',
-        address: '',
+        // address: '',
         opening_hours: '',
         cities: [],
         discount: 0,
@@ -171,10 +171,10 @@ useEffect(() => {
             <label className="form-label">Name:</label>
             <input required={true} type="text" name="name" value={labData.name} onChange={handleChange} className="form-input" />
             </div>
-            <div className="city-section">
+            {/* <div className="city-section">
             <label className="form-label">Address:</label>
             <input required={true} type="text" name="address" value={labData.address} onChange={handleChange} className="form-input" />
-            </div>
+            </div> */}
             <div className="city-section">
             <label className="form-label">Opening Hours:</label>
             <input required={true} type="text" name="opening_hours" value={labData.opening_hours} onChange={handleChange} className="form-input" />

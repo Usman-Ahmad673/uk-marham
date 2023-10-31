@@ -51,6 +51,8 @@ const ProductDetails = () => {
             setOpen(false);
 
             sessionStorage.setItem("fee", JSON.stringify(product.price * quantity));
+            sessionStorage.setItem("id", JSON.stringify(product._id));
+            sessionStorage.setItem("stock", JSON.stringify(product.stock - quantity));
             sessionStorage.setItem("name", JSON.stringify(name));
             navigate('/process/payment')
         };

@@ -56,31 +56,29 @@ const showToastErrorMessage = (e) => {
     return (
         <React.Fragment>
         {/* <h1>{labs[0].name}</h1> */}
-        <div className="container d-flex flex-column">
+        <div className="container">
 
                 {labs.map((lab) => (
                     <Link to={`/lab/${lab._id}`} style={{color:'black',textDecoration:'none'}}>
 
-                    <div className=" m-3 p-4" key={lab._id}>
+                    {/* <div className="" key={lab._id}> */}
                     <div className="practice-details-grid-container">
-                        <div className="left-side">
-                        <img src={lab.images?.url} alt={lab.images?.public_id} />
                         <div className="about">
-                            <p>
+                            <h4>
                             {lab.name}
-                            </p>
-                            <p>{lab.address}</p>
-                            <p>{lab.opening_hours}</p>
-                            <p>{lab.discount}</p>
+                            </h4>
+                            <h6>Address: {lab.address}</h6>
+                            <h6>Open: {lab.opening_hours}</h6>
+                            <h6>Discount: {lab.discount}</h6>
+                            <h6>Branches</h6>
                             <ul className='ul'>{labCities(lab.cities)}</ul>
                         </div>
                         </div>
 
                         
-                    </div>
+                    {/* </div> */}
 
                     
-                    </div>
                     </Link>
                 ))}
         </div>

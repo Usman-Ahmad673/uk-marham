@@ -36,7 +36,7 @@ const Home = () => {
     
 
 
-    const [city, setCity] = useState('Lahore');
+    const [city, setCity] = useState('Manchester');
 
 console.log(`city is ${city}`);
 
@@ -258,7 +258,7 @@ console.log(`city is ${city}`);
                 <Questions />
             </div>
 
-        {hospital && <h3 style={{margin:'0.5rem', color:'green'}}>Hospitals in Lahore</h3>}
+        {hospital && <h3 style={{margin:'0.5rem', color:'green'}}>Hospitals in {city}</h3>}
         <div className="docCard">
         
             {Array.isArray(hospital) ? (
@@ -268,12 +268,12 @@ console.log(`city is ${city}`);
                 ))
             ) : (
                 // Handle the case when `hospital` is not an array
-                <div>No hospital data available</div>
+                <div>No Hospital's available in {city}</div>
             )}
         </div>
 
 
-        {doctor && <h3 style={{margin:'0.5rem', color:'green'}}>Doctors in Lahore</h3>}
+        {doctor && <h3 style={{margin:'0.5rem', color:'green'}}>Doctors in {city}</h3>}
         <div className="docCard">
         {/* {doctor && <h3>Doctors in Lahore</h3>} */}
             {Array.isArray(doctor) ? (
@@ -283,7 +283,7 @@ console.log(`city is ${city}`);
                 ))
             ) : (
                 // Handle the case when `doctor` is not an array
-                <div>No doctor data available</div>
+                <div>No Doctor's available in {city}</div>
             )}
         </div>
         

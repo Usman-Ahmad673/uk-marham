@@ -72,17 +72,15 @@ const LabDetails = () => {
     return (
         <React.Fragment>
             {lab && (
-                <div className="container d-flex flex-column">
+                <div className="container d-flex flex-column border ">
                     <div className="lab-details-content">
                         <div className="lab-details-left-side">
-                            {lab.images?.url && <img src={lab.images?.url} alt={lab.images?.public_id} />}
                             <div className="lab-details-about">
-                                <p>
+                                <h3>
                                     {lab.name} <b>{lab.surgeon ? 'Surgeon' : ''}</b>
-                                </p>
-                                <p>{lab.address}</p>
-                                <p>{lab.opening_hours}</p>
-                                <p>{lab.discount}</p>
+                                </h3>
+                                <h6>Open: {lab.opening_hours}</h6>
+                                <h6>Discount: {lab.discount}</h6>
                             </div>
                         </div>
                         <div className="lab-details-right-side">

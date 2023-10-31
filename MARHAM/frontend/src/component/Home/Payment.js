@@ -46,6 +46,7 @@ import { toast } from 'react-toastify';
         const elements = useElements();
         const payBtn = useRef(null);
         const [amount, setAmount] = useState(fee);
+        const [stock, setStock] = useState(0);
     
         const paymentData = {
             // amount: Math.round(amount),
@@ -87,15 +88,26 @@ import { toast } from 'react-toastify';
     
                 if (result.error) {
                     payBtn.current.disabled = false;
-                    showToastErrorMessage.error(result.error.message);
+                    showToastErrorMessage(result.error.message);
                 } else {
                     if (result.paymentIntent.status === "succeeded") {
+                        setStock(JSON.parse(sessionStorage.getItem('stock')))
+                        const formData = new FormData()
+                        formData.set("stock", stock);
+                        const id = JSON.parse(sessionStorage.getItem('id'));
+                        const { data } = await axios.put(
+                            `http://127.0.0.1:4000/api/v1/admin/product/${id}`,
+                            formData,
+                            config
+                        );
                         showToastSuccessMessage();
                         sessionStorage.setItem("fee", JSON.stringify(''));
                         sessionStorage.setItem("name", JSON.stringify(''));
+                        sessionStorage.setItem("id", JSON.stringify(''));
+                        sessionStorage.setItem("stock", JSON.stringify(''));
                         navigate("/");
                     } else {
-                        showToastErrorMessage.error("There's some issue while processing payment");
+                        showToastErrorMessage("There's some issue while processing payment");
                     }
                 }
             } catch (error) {

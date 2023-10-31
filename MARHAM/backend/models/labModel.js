@@ -5,9 +5,6 @@ const labSchema = mongoose.Schema({
         type:String,
         trim:true
     },
-    address:{
-        type:String
-    },
     opening_hours:{
         type:String
     },

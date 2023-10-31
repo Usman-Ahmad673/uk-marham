@@ -1,11 +1,11 @@
     .practice-details-grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        gap: 1rem;
+        gap: 5rem;
         border-radius: 20px;
         border: 1px solid rgba(245, 222, 179, 0.363);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        background-color: #88b7dd;
+        background-color: #1ce0af;
         padding: 0.9rem;
         margin: 1rem;
     }
